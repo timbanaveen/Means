@@ -1,0 +1,60 @@
+[{
+    "author": "Alice",
+    "title": "What is Medium.com",
+    "content": [
+        "Medium is an online publishing platform developed by Twitter co-founder Evan Williams, and launched in August 2012. It is legally owned by A Medium Corporation.[2] The platform is an example of social journalism, having a hybrid collection of amateur and professional people and publications, or exclusive blogs or publishers on Medium[3] and is regularly regarded as a blog host.",
+        "Williams developed Medium as a way to publish writings and documents longer than Twitter's 140-character maximum. It eventually grew into a separate platform independent of Twitter's brand.",
+        "Medium also has its own publications, including the online music magazine Cuepoint, edited by Jonathan Shecter; NewCo Shift, led by entrepreneur, author, and journalist John Battelle; and the technology publication, Backchannel, edited by Steven Levy.",
+        "Williams created Medium from the ground up, with the idea of encouraging users to create longer posts than the 140-character standard of Twitter. When it launched in 2012, Williams stated, \"There's been less progress toward raising the quality of what's produced.\" By April 2013, Williams reported there were 30 full-time staff working on the platform, including a vacancy for a \"Storyteller\" role, and that it was taking \"98 percent\" of his time. By August, Williams reported that the site was still small, though he was still optimistic about it, saying \"We are trying to make it as easy as possible for people who have thoughtful things to say\"",
+        "Medium has been focusing on optimizing the time visitors spend reading the site (1.5 million hours in March 2015), as opposed to maximizing the size of its audience. In 2015, Williams criticized the standard web traffic metric of unique visitors as \"a highly volatile and meaningless number for what we’re trying to do\"",
+        "In 2016, Medium introduced advertising, and gained several publishers as customers to host their content on the platform",
+        "In January 2017, Williams announced that Medium was cutting its staff by 50 employees (around one third, \"mostly in sales, support, and other business functions\"), and closing its offices in New York and Washington D.C.[11] He explained that \"we had started scaling up the teams to sell and support products that were, at best, incremental improvements on the ad-driven publishing model\", but that Medium was instead aiming for a \"new [business] model for writers and creators to be rewarded, based on the value they’re creating for people\".[11] At that time, the company had raised $134 million in investment from venture capital firms and Willliams himself.",
+        "In March 2017, Medium announced a membership program for $5/month offering access to \"well-researched explainers, insightful perspectives, and useful knowledge with a longer shelf life\", with authors being paid a flat fee per article."
+    ],
+    "likes": 0,
+    "createdOn": 1493920456030,
+    "comments": [
+        {
+            "type": 1,
+            "comment": "Nice Article"
+        },
+        {
+            "type": 2,
+            "comment": "Nice Quote",
+            "linkInfo": {
+                "index": 10,
+                "length": 20
+            }
+        }
+    ]
+},
+{
+    "author": "Bob",
+    "title": "What is Wikipedia",
+    "content": [
+        "Wikipedia (Listeni/ˌwɪkᵻˈpiːdiə/ or Listeni/ˌwɪkiˈpiːdiə/ wik-i-pee-dee-ə) is a free online encyclopedia with the aim to allow anyone to edit articles.[3] Wikipedia is the largest and most popular general reference work on the Internet[4][5][6] and is ranked among the ten most popular websites.[7] Wikipedia is owned by the nonprofit Wikimedia Foundation.",
+        "Wikipedia was launched on January 15, 2001, by Jimmy Wales and Larry Sanger.[11] Sanger coined its name,[12][13] a portmanteau of wiki[notes 4] and encyclopedia. There was only the English language version initially, but it quickly developed similar versions in other languages, which differ in content and in editing practices. With 5,398,247 articles,[notes 5] the English Wikipedia is the largest of the more than 290 Wikipedia encyclopedias. Overall, Wikipedia consists of more than 40 million articles in more than 250 different languages[15] and, as of February 2014, it had 18 billion page views and nearly 500 million unique visitors each month.",
+        "As of March 2017, Wikipedia has about forty thousand high-quality articles known as Featured Articles and Good Articles that cover vital topics.[17][18] In 2005, Nature published a peer review comparing 42 science articles from Encyclopædia Britannica and Wikipedia, and found that Wikipedia's level of accuracy approached Encyclopædia Britannica's.[19] Criticism of Wikipedia includes claims that it exhibits systemic bias, presents a mixture of \"truths, half truths, and some falsehoods\",[20] and that, in controversial topics, it is subject to manipulation and spin.",
+        "Other collaborative online encyclopedias were attempted before Wikipedia, but none were so successful.",
+        "Wikipedia began as a complementary project for Nupedia, a free online English-language encyclopedia project whose articles were written by experts and reviewed under a formal process.[11] Nupedia was founded on March 9, 2000, under the ownership of Bomis, a web portal company. Its main figures were Jimmy Wales, the CEO of Bomis, and Larry Sanger, editor-in-chief for Nupedia and later Wikipedia. Nupedia was licensed initially under its own Nupedia Open Content License, switching to the GNU Free Documentation License before Wikipedia's founding at the urging of Richard Stallman.[23] Sanger and Wales founded Wikipedia.[24][25] While Wales is credited with defining the goal of making a publicly editable encyclopedia,[26][27] Sanger is credited with the strategy of using a wiki to reach that goal.[28] On January 10, 2001, Sanger proposed on the Nupedia mailing list to create a wiki as a \"feeder\" project for Nupedia",
+        "Wikipedia was launched on January 15, 2001, as a single English-language edition at www.wikipedia.com,[30] and announced by Sanger on the Nupedia mailing list.[26] Wikipedia's policy of \"neutral point-of-view\"[31] was codified in its first months. Otherwise, there were relatively few rules initially and Wikipedia operated independently of Nupedia.[26] Originally, Bomis intended to make Wikipedia a business for profit.",
+        "Wikipedia gained early contributors from Nupedia, Slashdot postings, and web search engine indexing. By August 8, 2001, Wikipedia had over 8,000 articles.[33] On September 25, 2001, Wikipedia had over 13,000 articles.[34] By the end of 2001, it had grown to approximately 20,000 articles and 18 language editions. It had reached 26 language editions by late 2002, 46 by the end of 2003, and 161 by the final days of 2004.[35] Nupedia and Wikipedia coexisted until the former's servers were taken down permanently in 2003, and its text was incorporated into Wikipedia. The English Wikipedia passed the mark of two million articles on September 9, 2007, making it the largest encyclopedia ever assembled, surpassing even the 1408 Yongle Encyclopedia, which had held the record for almost 600 years.",
+        "Citing fears of commercial advertising and lack of control in Wikipedia, users of the Spanish Wikipedia forked from Wikipedia to create the Enciclopedia Libre in February 2002.[37] These moves encouraged Wales to announce that Wikipedia would not display advertisements, and to change Wikipedia's domain from wikipedia.com to wikipedia.org"
+    ],
+    "likes": 0,
+    "createdOn": 1493920456030,
+    "comments": [
+        {
+            "type": 1,
+            "comment": "Nice Article"
+        },
+        {
+            "type": 2,
+            "comment": "Nice Quote",
+            "linkInfo": {
+                "index": 10,
+                "length": 20
+            }
+        }
+    ]
+}]
