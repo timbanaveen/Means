@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/timbanaveen/Means/issues"
   },
-  "homepage": "https://github.com/timbanaveen/Means#readme"
+  "homepage": "https://github.com/timbanaveen/Means#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
