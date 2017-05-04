@@ -1,0 +1,19 @@
+{
+  "name": "means",
+  "version": "1.0.0",
+  "description": "Medium.com like app using MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timbanaveen/Means.git"
+  },
+  "author": "Naveen Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timbanaveen/Means/issues"
+  },
+  "homepage": "https://github.com/timbanaveen/Means#readme"
+}
