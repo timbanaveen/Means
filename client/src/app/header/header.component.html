@@ -1,0 +1,13 @@
+<div class="header">
+  <a routerLink="/articles" class="header-text">Means</a>
+  <div 
+    [style.width]="width+'px'"
+    [ngClass]="{ 'search-container': true, 'expanded': isExpanded }"
+    (click)="onSearchClick($event)" >
+    <input type="text"
+      class="header-search-input"
+      (blur)="onSearchBlur()"
+      [(ngModel)]="searchText" >
+    <i class="material-icons search-icon">search</i>
+  </div>
+</div>
