@@ -7,12 +7,15 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 import { Article } from '../models/article.model';
+import { Comment } from '../models/comment.model';
 
 @Injectable()
 export class ArticlesService {
   private article: Article;
+
   private articlesUrl = 'http://localhost:3000/articles';
   private articleUrl = 'http://localhost:3000/article';
+  private addCommentUrl = 'http://localhost:3000/comment/';
 
   constructor(
     private http: Http
@@ -40,6 +43,13 @@ export class ArticlesService {
                       this.article = Object.assign({}, article[0]);
                       return article;
                     })
+                    .catch(this.handleError);
+  }
+
+  addComment(comment: Comment, articleId: string): Promise<Comment[]> {
+    return this.http.post(`${this.addCommentUrl}${articleId}`, comment)
+                    .toPromise()
+                    .then(this.extractData)
                     .catch(this.handleError);
   }
 

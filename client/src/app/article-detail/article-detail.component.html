@@ -18,6 +18,7 @@
   </div>
   <!-- Comments -->
   <app-comments-list
-    [comments]="article.comments" >
+    [comments]="article.comments"
+    (onCommentAdded)="addComment($event)" >
   </app-comments-list>
 </div>

@@ -1,5 +1,19 @@
 <h3>Comments</h3>
 <ul class="comments-wrapper">
+  <li class="add-comment-textarea comment-list-item">
+    <textarea 
+      cols="30" 
+      rows="5"
+      placeholder="Please enter comment"
+      (focus)="showPublish=true"
+      (blur)="onTextAreaBlur()"
+      [(ngModel)]="commentText" ></textarea>
+      <button
+        [ngClass]='{"publish-button":true, "show":showPublish}'
+        (click)="onPublishButtonClick()" >
+        Publish  
+      </button>
+  </li>
   <li
     class="comment-list-item"
     *ngFor="let comment of comments" >

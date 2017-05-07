@@ -35,6 +35,37 @@ const model = {
                 }
             });
         });
+    },
+
+    addComment: function(db, articleId, comment) {
+        return new Promise((resolve, reject) => {
+            const collection = db.collection(articlesCollectionKey);
+
+            collection.update(
+                { _id: ObjectID(articleId) },
+                { $push: {comments: comment} },
+                function(err) {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve();
+                    }
+                } );
+        });
+    },
+
+    getComments: function(db, id) {
+        return new Promise((resolve, reject) => {
+            const collection = db.collection(articlesCollectionKey);
+
+            collection.find({ _id: ObjectID(id) }).toArray((err, docs) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(docs[0].comments);
+                }
+            });
+        });
     }
 };
 
