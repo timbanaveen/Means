@@ -12,6 +12,7 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
 
 import { ArticlesService } from './services/articles.service';
 import { ArticlesResolver } from './services/articles-resolver.service';
+import { CommentsListComponent } from './comments-list/comments-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ArticlesResolver } from './services/articles-resolver.service';
     HeaderComponent,
     ArticleDetailComponent,
     ArticlesListItemComponent,
-    ArticlesListComponent
+    ArticlesListComponent,
+    CommentsListComponent
   ],
   imports: [
     BrowserModule,

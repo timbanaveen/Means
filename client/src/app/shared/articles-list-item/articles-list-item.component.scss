@@ -21,6 +21,10 @@
             display: flex;
             flex-direction: column;
 
+            .author-name {
+                color: #673ab7;
+            }
+
             .created-on {
                 font-size: 14px;
                 margin-top: 3px;
@@ -29,6 +33,8 @@
     }
 
     .content-wrapper {
+        text-decoration: none;
+        color: inherit;
         cursor: pointer;
     }
 

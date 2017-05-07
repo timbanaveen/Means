@@ -6,10 +6,12 @@
       <div class="created-on">{{article.createdOn | date}}</div>
     </div>
   </div>
-  <div class="content-wrapper">
+  <a 
+    class="content-wrapper"
+    routerLink="/article/{{article._id}}" >
     <h2>{{article.title}}</h2>
     <span>{{article.content[0]}}</span>
-  </div>
+  </a>
   <div class="footer">
     <div class="favorite-wrapper">
       <i class="material-icons">favorite_border</i>

@@ -11,6 +11,7 @@ import { Article } from '../models/article.model';
 @Injectable()
 export class ArticlesService {
   private articlesUrl = 'http://localhost:3000/articles';
+  private articleUrl = 'http://localhost:3000/article';
 
   constructor(
     private http: Http
@@ -18,6 +19,13 @@ export class ArticlesService {
 
   getArticles(): Promise<Article[]> {
     return this.http.get(this.articlesUrl)
+                    .toPromise()
+                    .then(this.extractData)
+                    .catch(this.handleError);
+  }
+
+  getArticle(articleId): Promise<Article> {
+    return this.http.get(`${this.articleUrl}/${articleId}`)
                     .toPromise()
                     .then(this.extractData)
                     .catch(this.handleError);
