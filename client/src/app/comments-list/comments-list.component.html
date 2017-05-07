@@ -1,3 +1,9 @@
-<p>
-  comments-list works!
-</p>
+<h3>Comments</h3>
+<ul class="comments-wrapper">
+  <li
+    class="comment-list-item"
+    *ngFor="let comment of comments" >
+    <app-comments-list-item
+      [comment]="getCommentItemModel(comment)" ></app-comments-list-item>
+  </li>
+</ul>

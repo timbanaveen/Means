@@ -13,6 +13,8 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { ArticlesService } from './services/articles.service';
 import { ArticlesResolver } from './services/articles-resolver.service';
 import { CommentsListComponent } from './comments-list/comments-list.component';
+import { CommentsListItemComponent } from './shared/comments-list-item/comments-list-item.component';
+import { CommentsService } from './services/comments.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { CommentsListComponent } from './comments-list/comments-list.component';
     ArticleDetailComponent,
     ArticlesListItemComponent,
     ArticlesListComponent,
-    CommentsListComponent
+    CommentsListComponent,
+    CommentsListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { CommentsListComponent } from './comments-list/comments-list.component';
   ],
   providers: [
     ArticlesService,
-    ArticlesResolver
+    ArticlesResolver,
+    CommentsService
   ],
   bootstrap: [AppComponent]
 })

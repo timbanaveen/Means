@@ -3,6 +3,6 @@ import { LinkInfo } from './linkInfo.model';
 
 export interface Comment {
     type: CommentType,
-    comment: String,
+    comment: string,
     linkInfo?: LinkInfo
 }

@@ -1,0 +1,36 @@
+@import '../../../colors.scss';
+
+.comment-item-wrapper {
+    padding: 10px 15px;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);
+
+    .header {
+        display: flex;
+        margin-bottom: 10px;
+
+        .account-image {
+            font-size: 35px;
+        }
+
+        .author-name {
+            padding: 5px;
+            color: $author-name-color;
+        }
+    }
+
+    .content-wrapper {
+        .comment-link {
+            display: block;
+            cursor: pointer;
+            margin: 20px 0;
+            border-radius: 2px;
+            background-color: rgba(255, 255, 0, 0.35);
+            padding: 5px;
+        }
+
+        .comment-text {
+            margin-top: 20px;
+        }
+    }
+    
+}

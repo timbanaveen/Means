@@ -10,6 +10,7 @@ import { Article } from '../models/article.model';
 
 @Injectable()
 export class ArticlesService {
+  private article: Article;
   private articlesUrl = 'http://localhost:3000/articles';
   private articleUrl = 'http://localhost:3000/article';
 
@@ -17,26 +18,50 @@ export class ArticlesService {
     private http: Http
   ) {}
 
-  getArticles(): Promise<Article[]> {
+  /**
+   * Fetch all articles from Backend.
+   */
+  getAllArticles(): Promise<Article[]> {
     return this.http.get(this.articlesUrl)
                     .toPromise()
                     .then(this.extractData)
                     .catch(this.handleError);
   }
 
-  getArticle(articleId): Promise<Article> {
+  /**
+   * Get article of given id frfom backend.
+   */
+  getArticle(articleId): Promise<any> {
     return this.http.get(`${this.articleUrl}/${articleId}`)
                     .toPromise()
-                    .then(this.extractData)
+                    .then((res: Response) => {
+                      const article = this.extractData(res);
+
+                      this.article = Object.assign({}, article[0]);
+                      return article;
+                    })
                     .catch(this.handleError);
   }
 
+  /**
+   * Store current article for usage in comments.
+   */
+  getCurrentArticle(): Article {
+    return this.article;
+  }
+
+  /**
+   * Generic function to extract data from response.
+   */
   extractData(res: Response) {
     let body = res.json();
 
-    return <Article[]> body || {};
+    return body || {};
   }
 
+  /**
+   * Generic function to extract error from response.
+   */
   handleError(error: Response | any) {
     let errMsg: string;
 

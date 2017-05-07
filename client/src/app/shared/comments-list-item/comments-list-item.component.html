@@ -1,0 +1,12 @@
+<div class="comment-item-wrapper">
+  <div class="header">
+    <i class="material-icons account-image">account_circle</i>
+    <div class="author-name">{{comment.author}}</div>
+  </div>
+  <div class="content-wrapper">
+    <a 
+      class="comment-link"
+      *ngIf="comment.linkText">{{comment.linkText}}</a>
+    <div class="comment-text">{{comment.commentText}}</div>
+  </div>
+</div>
