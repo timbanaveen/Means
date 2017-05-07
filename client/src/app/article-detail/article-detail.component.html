@@ -11,7 +11,8 @@
     <h2>{{article.title}}</h2>
     <p 
       class="article-text"
-      *ngFor="let para of article.content" >
+      *ngFor="let para of article.content; let idx = index"
+      id="pl{{idx}}" >
       {{para}}
     </p>
   </div>
