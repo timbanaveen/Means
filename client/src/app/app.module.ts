@@ -2,15 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
-
-import { appRoutes } from './routes';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ArticlesListItemComponent } from './shared/articles-list-item/articles-list-item.component';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
+
+import { ArticlesService } from './services/articles.service';
+import { ArticlesResolver } from './services/articles-resolver.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,12 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ArticlesService,
+    ArticlesResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

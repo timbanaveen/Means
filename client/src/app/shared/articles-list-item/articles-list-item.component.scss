@@ -1,0 +1,49 @@
+.article-item-wrapper {
+    padding: 15px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: box-shadow 300ms;
+
+    &:hover {
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+        display: flex;
+
+        .account-image {
+            font-size: 45px;
+        }
+
+        .author-info {
+            padding: 2px 15px;
+            display: flex;
+            flex-direction: column;
+
+            .created-on {
+                font-size: 14px;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    .content-wrapper {
+        cursor: pointer;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding-top: 10px;
+
+        .favorite-count {
+            padding-left: 10px;
+        }
+
+        .comment-count {
+            padding-right: 10px;
+        }
+    }
+}

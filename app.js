@@ -6,6 +6,12 @@ const app = express();
 
 const port = 3000;
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // create connection of mongo, this single connection is used for all db operations.
 mongoServices.createConnection(app);
 // initialize routes of express.

@@ -1,6 +1,10 @@
 @import '../../colors.scss';
 
 .header {
+    position: fixed;
+    background-color: white;
+    width: 90%;
+    top: 0;
     padding: 10px 5%;
     box-shadow: 0 1px 1px gray;
 
