@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { ArticlesService } from '../services/articles.service';
+import { ToolTipService } from '../services/tool-tip.service';
 
 import { Comment } from '../models/comment.model';
 import { Article } from '../models/article.model';
@@ -12,12 +13,14 @@ import { Article } from '../models/article.model';
   styleUrls: ['./article-detail.component.scss']
 })
 export class ArticleDetailComponent implements OnInit {
-  article: Article;
+  private article: Article;
+  private prevSelection: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private articleService: ArticlesService
+    private articleService: ArticlesService,
+    private toolTipService: ToolTipService
   ) {
     // https://github.com/angular/angular/issues/6595
     // TODO: remove this when above issue is resolved.
@@ -28,6 +31,9 @@ export class ArticleDetailComponent implements OnInit {
           const element = document.querySelector("#" + tree.fragment);
           if (element) { element.scrollIntoView(element); }
         }
+
+        // adding event to handle showing and hiding tooltip on text selection.
+        this.addTextSelectionEvent();
       }
     });
   }
@@ -45,6 +51,27 @@ export class ArticleDetailComponent implements OnInit {
                             document.body.scrollTop = document.body.scrollHeight;
                           }, 100);
                         }); // TODO: show message on error
+  }
+
+  private addTextSelectionEvent() {
+    document.addEventListener('mouseup', (event) => {
+      const selectedText = window.getSelection().toString();
+
+      if (selectedText
+          && selectedText.length) {
+        setTimeout(() => {
+          const newSelection = window.getSelection().toString();
+
+          if (newSelection === selectedText) {
+            this.toolTipService.showAt([event.x - 27, event.y - 58]);
+          }
+        }, 100);
+      }
+    });
+
+    document.addEventListener('mousedown', (event) => {
+      this.toolTipService.hide();
+    });
   }
 
 }

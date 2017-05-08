@@ -15,6 +15,9 @@ import { ArticlesResolver } from './services/articles-resolver.service';
 import { CommentsListComponent } from './comments-list/comments-list.component';
 import { CommentsListItemComponent } from './shared/comments-list-item/comments-list-item.component';
 import { CommentsService } from './services/comments.service';
+import { ToolTipService } from './services/tool-tip.service';
+import { ActionToolTipComponent } from './shared/action-tool-tip/action-tool-tip.component';
+import { LinkedCommentComponent } from './linked-comment/linked-comment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { CommentsService } from './services/comments.service';
     ArticlesListItemComponent,
     ArticlesListComponent,
     CommentsListComponent,
-    CommentsListItemComponent
+    CommentsListItemComponent,
+    ActionToolTipComponent,
+    LinkedCommentComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { CommentsService } from './services/comments.service';
   providers: [
     ArticlesService,
     ArticlesResolver,
-    CommentsService
+    CommentsService,
+    ToolTipService
   ],
   bootstrap: [AppComponent]
 })

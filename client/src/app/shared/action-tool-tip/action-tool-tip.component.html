@@ -1,0 +1,11 @@
+<div 
+  [ngClass]="{'tooltip-wrapper': true, 'show': show}"
+  [style.top.px]="top"
+  [style.left.px]="left" >
+  <div 
+    class="tooltip-actions"
+    *ngFor="let action of actions" >
+    <i class="material-icons">{{action.iconName}}</i>
+  </div>
+  <div class="tooltip-anchor"></div>
+</div>

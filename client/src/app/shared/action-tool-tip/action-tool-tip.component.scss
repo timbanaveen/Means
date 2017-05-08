@@ -1,0 +1,35 @@
+.tooltip-wrapper {
+    position: fixed;
+    display: inline-block;
+    visibility: hidden;
+    background-color: #222;
+    padding: 7px 15px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: rotateX(40deg);
+    transition: transform 150ms;
+
+    &.show {
+        visibility: visible;
+        transform: rotateX(0deg);
+    }
+
+    .material-icons {
+        cursor: pointer;
+        color: #eee;
+
+        &:hover {
+            color: #aaa;
+        }
+    }
+
+    .tooltip-anchor {
+        border: 7px solid transparent;
+        border-top-color: #222;
+        position: absolute;
+        top: 38px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
