@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { ArticlesService } from '../services/articles.service';
 import { ToolTipService } from '../services/tool-tip.service';
+import { ArticleDetailService } from '../services/article-detail.service';
 
 import { Comment } from '../models/comment.model';
 import { Article } from '../models/article.model';
@@ -20,7 +21,8 @@ export class ArticleDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private articleService: ArticlesService,
-    private toolTipService: ToolTipService
+    private toolTipService: ToolTipService,
+    private articleDetailService: ArticleDetailService
   ) {
     // https://github.com/angular/angular/issues/6595
     // TODO: remove this when above issue is resolved.
@@ -51,6 +53,11 @@ export class ArticleDetailComponent implements OnInit {
                             document.body.scrollTop = document.body.scrollHeight;
                           }, 100);
                         }); // TODO: show message on error
+  }
+
+  private isLinkedPara(paraIdx): boolean {
+    return this.articleDetailService
+                .getParaComments(this.article, paraIdx).length > 0;
   }
 
   private addTextSelectionEvent() {

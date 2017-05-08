@@ -10,10 +10,16 @@
   <div class="article-content">
     <h2>{{article.title}}</h2>
     <p 
-      class="article-text"
       *ngFor="let para of article.content; let idx = index"
+      class="article-text"
       id="pl{{idx}}" >
       {{para}}
+
+      <span
+        *ngIf="isLinkedPara(idx)" 
+        class="comment-link">
+        *
+      </span>
     </p>
   </div>
   <!-- Comments -->

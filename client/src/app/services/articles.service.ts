@@ -32,7 +32,7 @@ export class ArticlesService {
   }
 
   /**
-   * Get article of given id frfom backend.
+   * Get article of given id fom backend.
    */
   getArticle(articleId): Promise<any> {
     return this.http.get(`${this.articleUrl}/${articleId}`)
@@ -46,6 +46,9 @@ export class ArticlesService {
                     .catch(this.handleError);
   }
 
+  /**
+   * Add Comment to given article.
+   */
   addComment(comment: Comment, articleId: string): Promise<Comment[]> {
     return this.http.post(`${this.addCommentUrl}${articleId}`, comment)
                     .toPromise()

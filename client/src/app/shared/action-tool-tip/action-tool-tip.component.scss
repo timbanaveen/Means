@@ -13,6 +13,7 @@
     &.show {
         visibility: visible;
         transform: rotateX(0deg);
+        animation: pop-upwards 180ms forwards linear;
     }
 
     .material-icons {

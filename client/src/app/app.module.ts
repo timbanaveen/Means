@@ -18,6 +18,7 @@ import { CommentsService } from './services/comments.service';
 import { ToolTipService } from './services/tool-tip.service';
 import { ActionToolTipComponent } from './shared/action-tool-tip/action-tool-tip.component';
 import { LinkedCommentComponent } from './linked-comment/linked-comment.component';
+import { ArticleDetailService } from './services/article-detail.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LinkedCommentComponent } from './linked-comment/linked-comment.componen
     ArticlesService,
     ArticlesResolver,
     CommentsService,
-    ToolTipService
+    ToolTipService,
+    ArticleDetailService
   ],
   bootstrap: [AppComponent]
 })
