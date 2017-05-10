@@ -1,0 +1,78 @@
+@import '../colors.scss';
+
+@keyframes popup {
+    from {
+        opacity: 1;
+        bottom: -50%;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 0%;
+    }
+}
+
+.linked-comment-wrapper {
+    position: fixed;
+    min-width: 267px;
+    bottom: 0;
+    right: 4px;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    background: #fff;
+    border-radius: 2px 2px 0 0;
+    animation: popup 200ms ease-out 100ms;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
+    .header {
+        padding: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        .close-icon {
+            float: right;
+            cursor: pointer;
+        }
+    }
+
+    .comment-area {
+        border: none;
+        resize: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: $text-color;
+        padding: 5px;
+        display: block;
+    }
+
+    .publish-button {
+        margin: 5px;
+    }
+
+    .prev-comments {
+        padding: 0;
+        margin: 0;
+
+        .prev-linked-comment {
+            list-style-type: none;
+
+            .comment-wrapper {
+                padding: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-left-width: 0;
+                border-right-width: 0;
+
+                .comment-header {
+                    display: flex;
+                    margin-bottom: 10px;
+
+                    .author-name {
+                        margin-left: 5px;
+                        margin-top: 2px;
+                        color: $author-name-color;
+                    }
+                }
+            }
+        }
+    }
+}

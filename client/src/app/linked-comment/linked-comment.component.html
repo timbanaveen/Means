@@ -1,3 +1,38 @@
-<p>
-  linked-comment works!
-</p>
+<div
+  *ngIf="isExpanded"
+  class="linked-comment-wrapper">
+  <div class="header">Comment
+    <i 
+      class="material-icons close-icon"
+      (click)="onCloseClick()" >close</i>
+  </div>
+  <!-- Comment Input -->
+  <div
+    *ngIf="linkInfo"
+    class="comment-input">
+    <textarea 
+      cols="30" 
+      rows="10" 
+      class="comment-area"
+      placeholder="Please Enter Comment"
+      [(ngModel)]="commentText" ></textarea>
+    <button
+      class="primary-button publish-button"
+      (click)="onPublishClick()" >Publish</button>
+  </div>
+
+  <!-- List of previous comments -->
+  <ul class="prev-comments">
+    <li 
+      *ngFor="let comment of comments"
+      class="prev-linked-comment" >
+      <div class="comment-wrapper">
+        <div class="comment-header">
+          <i class="material-icons account-image">account_circle</i>
+          <div class="author-name">{{comment.author}}</div>
+        </div>
+        <div class="comment-text">{{comment.commentText}}</div>
+      </div> 
+    </li>
+  </ul>
+</div>

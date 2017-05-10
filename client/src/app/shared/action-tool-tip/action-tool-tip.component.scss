@@ -9,6 +9,7 @@
     z-index: 1000;
     transform: rotateX(40deg);
     transition: transform 150ms;
+    transform-origin: bottom;
 
     &.show {
         visibility: visible;

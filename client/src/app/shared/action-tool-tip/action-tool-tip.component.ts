@@ -21,7 +21,7 @@ export class ActionToolTipComponent implements OnInit {
   ];
 
   constructor(
-    toolTipService: ToolTipService
+    private toolTipService: ToolTipService
   ) { 
     toolTipService.showAt$.subscribe(coords => {
       this.left = coords[0];
@@ -37,4 +37,7 @@ export class ActionToolTipComponent implements OnInit {
   ngOnInit() {
   }
 
+  onActionClick(action: ToolTipAction) {
+    this.toolTipService.actionClicked(action);
+  }
 }

@@ -6,26 +6,39 @@
       <div class="created-on">{{article.createdOn | date}}</div>
     </div>
   </div>
+
   <!-- Content of article -->
   <div class="article-content">
     <h2>{{article.title}}</h2>
     <p 
       *ngFor="let para of article.content; let idx = index"
       class="article-text"
-      id="pl{{idx}}" >
-      {{para}}
-
+      id="pl{{idx}}" >{{para}}
       <span
         *ngIf="isLinkedPara(idx)" 
-        class="comment-link">
+        class="comment-link"
+        (click)="onCommentLinkClick(idx)" >
         *
       </span>
     </p>
   </div>
+
   <!-- Comments -->
   <app-comments-list
     [comments]="article.comments"
     (onCommentAdded)="addComment($event)" >
   </app-comments-list>
+
+  <!-- Linked Comments Section -->
+  <app-linked-comment
+    [comments]="currentParaComments"
+    [isExpanded]="isLinkedCommentExpanded"
+    [linkInfo]="linkInfo"
+    (commentSaved)="linkedCommentSaved($event)"
+    (hideCommentView)="hideCommentPopUp()" >
+  </app-linked-comment>
 </div>
-<app-action-tool-tip></app-action-tool-tip>
+<!-- Tooltip actions -->
+<app-action-tool-tip
+  (onAction)="onToolTipAction()" >
+</app-action-tool-tip>

@@ -43,7 +43,7 @@ function initRoutes(app) {
             comment: req.body.comment
         };
 
-        const linkInfo = req.params.linkInfo;
+        const linkInfo = req.body.linkInfo;
         if (linkInfo) {
             commentObj.linkInfo = req.body.linkInfo;
         }

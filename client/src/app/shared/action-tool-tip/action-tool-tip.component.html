@@ -4,7 +4,8 @@
   [style.left.px]="left" >
   <div 
     class="tooltip-actions"
-    *ngFor="let action of actions" >
+    *ngFor="let action of actions"
+    (click)="onActionClick(action)" >
     <i class="material-icons">{{action.iconName}}</i>
   </div>
   <div class="tooltip-anchor"></div>

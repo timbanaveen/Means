@@ -9,7 +9,7 @@
       (blur)="onTextAreaBlur()"
       [(ngModel)]="commentText" ></textarea>
       <button
-        [ngClass]='{"publish-button":true, "show":showPublish}'
+        [ngClass]='{"primary-button": true, "publish-button":true, "show":showPublish}'
         (click)="onPublishButtonClick()" >
         Publish  
       </button>

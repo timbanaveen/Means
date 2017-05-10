@@ -28,7 +28,9 @@ export class CommentsService {
       const articleText = article.content.join('');
 
       commentItem.linkText = articleText.substr(linkInfo.index, linkInfo.length);
-      commentItem.linkUrl = window.location.href + '#pl' + this.getParaIndex(linkInfo.index);
+      commentItem.linkUrl = window.location.href.substr(0, window.location.href.length - window.location.hash.length) + 
+                            '#pl' + 
+                            this.getParaIndex(linkInfo.index);
     }
 
     return commentItem;
@@ -49,7 +51,7 @@ export class CommentsService {
 
       if (linkIdx > lastParaIndex 
           && linkIdx <= currentParaIndex) {
-        return index;      
+        return i;      
       } else {
         lastParaIndex = currentParaIndex;
       }
