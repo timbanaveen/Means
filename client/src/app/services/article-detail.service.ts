@@ -81,6 +81,48 @@ export class ArticleDetailService {
     return selectionInfo;
   }
 
+  /**
+   * wraps select text by highlighter.
+   */
+  highlightSelection(article: Article, selectionInfo: SelectedTextInfo) {
+    const highlightEl = '<span class="text-highlighter"';
+    const highlightElClose = '</span>';
+    const { fromPara, fromOffset, toPara, toOffset } = selectionInfo;
+
+    if (fromPara === toPara) {
+      const currentPara = article.content[fromPara];
+      article.content[fromPara] = currentPara.substr(0, fromOffset) +
+                                  `${highlightEl}>${currentPara.substr(fromOffset, toOffset - fromOffset)}${highlightElClose}` +
+                                  currentPara.substr(toOffset);
+    } else {
+      const fromParaText = article.content[fromPara];
+      article.content[fromPara] = fromParaText.substr(0, fromOffset) +
+                                  `${highlightEl}>${fromParaText.substr(fromOffset)}${highlightElClose}`;
+
+      for (let i = fromPara + 1; i < toPara; i++) {
+        article.content[i] = `${highlightEl}${article.content[i]}${highlightElClose}`;
+      }
+
+      const toParaText = article.content[toPara];
+      article.content[toPara] = `${highlightEl}>${toParaText.substr(0, toOffset)}${highlightElClose}` +
+                                toParaText.substr(toOffset);
+    }
+  }
+
+  /**
+   * Removes all highlights from article.
+   */
+  unHighlightArticle(article: Article) {
+    const highlightElRe = /<span class="text-highlighter">([\s\S]*)<\/span>/g;
+    let paras = article.content;
+
+    paras = paras.map((para) => {
+      return para.replace(highlightElRe, '$1');
+    });
+
+    article.content = paras;
+  }
+
   private getArticleTextRanges(article: Article) {
     let articleParas: string[] = article.content;
     let prevIndex: number = 0;

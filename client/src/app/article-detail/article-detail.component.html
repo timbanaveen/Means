@@ -10,17 +10,20 @@
   <!-- Content of article -->
   <div class="article-content">
     <h2>{{article.title}}</h2>
-    <p 
-      *ngFor="let para of article.content; let idx = index"
+    <div 
       class="article-text"
-      id="pl{{idx}}" >{{para}}
+      *ngFor="let para of article.content; let idx = index" >
       <span
         *ngIf="isLinkedPara(idx)" 
         class="comment-link"
         (click)="onCommentLinkClick(idx)" >
         *
       </span>
-    </p>
+      <p 
+        id="pl{{idx}}"
+        [innerHTML]="para"
+        (mousedown)="onParaMouseDown($event, idx)" ></p>
+    </div>
   </div>
 
   <!-- Comments -->

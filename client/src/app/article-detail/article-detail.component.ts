@@ -92,12 +92,13 @@ export class ArticleDetailComponent implements OnInit {
   }
 
   private linkedCommentSaved(comments: Comment[]) {
-    this.isLinkedCommentExpanded = false;
     this.article.comments = comments;
+    this.hideCommentPopUp();
   }
 
   private hideCommentPopUp() {
     this.isLinkedCommentExpanded = false;
+    this.articleDetailService.unHighlightArticle(this.article);    
   }
 
   /**
@@ -109,6 +110,9 @@ export class ArticleDetailComponent implements OnInit {
       this.linkInfo = this.articleDetailService.extractLinkInfo(this.article, this.selectionInfo);
       this.currentParaComments = this.getParaCommentItems(this.selectionInfo.fromPara);
       this.isLinkedCommentExpanded = true;
+
+      // highlight actions
+      this.articleDetailService.highlightSelection(this.article, this.selectionInfo);
     }
   }
 
@@ -150,5 +154,9 @@ export class ArticleDetailComponent implements OnInit {
     document.addEventListener('click', (event) => {
       this.toolTipService.hide();
     });
+  }
+
+  onParaMouseDown(event, paraIdx) {
+    this.hideCommentPopUp();
   }
 }
