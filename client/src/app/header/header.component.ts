@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SearchService } from '../services/search.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +11,10 @@ export class HeaderComponent implements OnInit {
   isExpanded = false;
   searchText = '';
 
-  constructor() {}
+  constructor(
+    private searchService: SearchService
+  ) {}
+
   ngOnInit() {}
 
   onSearchClick(event) {
@@ -23,6 +28,10 @@ export class HeaderComponent implements OnInit {
     if (this.searchText.length === 0) {
       this.isExpanded = false;
     }
+  }
+
+  onSearchChange() {
+    this.searchService.searchValueChanged(this.searchText);
   }
 
 }

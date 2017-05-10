@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/debounceTime';
 
 import { Article } from '../models/article.model';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-articles-list',
@@ -9,14 +11,33 @@ import { Article } from '../models/article.model';
   styleUrls: ['./articles-list.component.scss']
 })
 export class ArticlesListComponent implements OnInit {
-  articles: Article[];
+  private originalArticles: Article[];
+  private articles: Article[];
 
   constructor(
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private searchService: SearchService
+  ) {
+    searchService.searchValueChange$
+      .debounceTime(300)
+      .subscribe((serachValue) => {
+        this.filterArticles(serachValue);
+      });
+  }
 
   ngOnInit() {
-    this.articles = this.route.snapshot.data.articles;
+    this.originalArticles = this.articles = this.route.snapshot.data.articles;
+  }
+
+  filterArticles(searchValue: string) {
+    let searchValueLc = searchValue.toLowerCase();
+
+    this.articles = this.originalArticles
+      .filter((article: Article) => {
+        return (article.author.toLowerCase().includes(searchValueLc)
+                || article.title.toLowerCase().includes(searchValueLc)
+                || article.content[0].toLowerCase().includes(searchValueLc));
+      });
   }
 
 }
