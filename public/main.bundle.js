@@ -697,9 +697,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ArticlesService = (function () {
     function ArticlesService(http) {
         this.http = http;
-        this.articlesUrl = 'http://localhost:3000/articles';
-        this.articleUrl = 'http://localhost:3000/article';
-        this.addCommentUrl = 'http://localhost:3000/comment/';
+        this.articlesUrl = 'http://localhost:3000/api/articles';
+        this.articleUrl = 'http://localhost:3000/api/article';
+        this.addCommentUrl = 'http://localhost:3000/api/comment/';
     }
     /**
      * Fetch all articles from Backend.

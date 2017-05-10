@@ -1,11 +1,12 @@
 const articles = require('./models/articles');
+const path = require('path');
 
 /* Init Routes for Application */
 function initRoutes(app) {
     /**
      * Get all articles and all relevant data related to article. 
      */
-     app.get('/articles', function(req, res) {
+     app.get('/api/articles', function(req, res) {
         articles.getAllArticles(app.locals.db)
             .then((allArticles) => {
                 res.json(allArticles);
@@ -19,7 +20,7 @@ function initRoutes(app) {
      /**
       * Get article having id equal to passed id.
       */
-     app.get('/article/:articleId', function(req, res) {
+     app.get('/api/article/:articleId', function(req, res) {
         const articleId = req.params.articleId;
 
         articles.getArticle(app.locals.db, articleId)
@@ -35,7 +36,7 @@ function initRoutes(app) {
      /**
       * Push comment in given article.
       */
-    app.post('/comment/:articleId', function(req, res) {
+    app.post('/api/comment/:articleId', function(req, res) {
         const articleId = req.params.articleId;
 
         let commentObj = {
@@ -59,6 +60,10 @@ function initRoutes(app) {
             console.error(err.stack);
             res.status(400).send(err.message);
         });
+    });
+
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/index.html'));
     });
 }
 

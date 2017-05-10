@@ -9,6 +9,9 @@ const app = express();
 
 const port = 3000;
 
+// serve client code
+app.use(express.static('public'));
+
 // allow cors
 app.use(cors());
 
