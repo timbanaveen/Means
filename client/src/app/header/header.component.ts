@@ -17,6 +17,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Expand search input.
+   */
   onSearchClick(event) {
     if (!this.isExpanded) {
       this.isExpanded = true;
@@ -24,12 +27,18 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  /**
+   * Hide search input
+   */
   onSearchBlur() {
     if (this.searchText.length === 0) {
       this.isExpanded = false;
     }
   }
 
+  /**
+   * Let service know about change in input value.
+   */
   onSearchChange() {
     this.searchService.searchValueChanged(this.searchText);
   }

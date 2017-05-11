@@ -7,6 +7,9 @@ import { ArticlesResolver } from '../services/articles-resolver.service';
 import { ArticleDetailComponent } from '../article-detail/article-detail.component';
 import { ArticleResolver } from '../services/article-resolver.service';
 
+/**
+ * Register all angular routes.
+ */
 const appRoutes: Routes = [
   {
     path: 'articles',

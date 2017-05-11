@@ -7,7 +7,7 @@ export class SearchService {
 
   searchValueChange$ = this.searchValueChangeSource.asObservable();
   constructor() {}
-
+  
   searchValueChanged(value) {
     this.searchValueChangeSource.next(value);
   }

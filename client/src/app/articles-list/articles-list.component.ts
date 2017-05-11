@@ -18,6 +18,7 @@ export class ArticlesListComponent implements OnInit {
     private route: ActivatedRoute,
     private searchService: SearchService
   ) {
+    // let subscribers know about value change with debounce of 300ms
     searchService.searchValueChange$
       .debounceTime(300)
       .subscribe((serachValue) => {
@@ -29,6 +30,9 @@ export class ArticlesListComponent implements OnInit {
     this.originalArticles = this.articles = this.route.snapshot.data.articles;
   }
 
+  /**
+   * Filter articles based on search query.
+   */
   filterArticles(searchValue: string) {
     let searchValueLc = searchValue.toLowerCase();
 

@@ -27,6 +27,9 @@ export class LinkedCommentComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Save comment and update comment list
+   */
   private onPublishClick() {
     const commentToSave: Comment = {
       comment: this.commentText,

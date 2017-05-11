@@ -16,14 +16,23 @@ export class ToolTipService {
 
   constructor() {}
 
+  /**
+   * Show tooltip at given coords.
+   */
   showAt(coords: number[]) {
     this.showAtSource.next(coords);
   }
 
+  /**
+   * Hide tooltip
+   */
   hide() {
     this.hideSource.next();
   }
 
+  /**
+   * let subscribers know about action.
+   */
   actionClicked(action: ToolTipAction) {
     this.actionClickedSource.next(action);
   }

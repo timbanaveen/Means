@@ -13,6 +13,9 @@ export class ArticleResolver implements Resolve<Article> {
         private route: Router
     ) {}
 
+    /**
+     * Resolve given article
+     */
     resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Article> {
         return this.articlesService.getArticle(route.params.id)
                                 .then(article => article);

@@ -22,7 +22,8 @@ export class ActionToolTipComponent implements OnInit {
 
   constructor(
     private toolTipService: ToolTipService
-  ) { 
+  ) {
+    // Subscribe to observalbles for actions. 
     toolTipService.showAt$.subscribe(coords => {
       this.left = coords[0];
       this.top = coords[1];

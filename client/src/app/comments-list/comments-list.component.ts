@@ -25,6 +25,9 @@ export class CommentsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Convert Comment model to Comment Item model
+   */
   private getCommentItemModel(comment: Comment): CommentItem {
     return this.commentsService.createCommentItemModel(comment);
   }
@@ -33,6 +36,9 @@ export class CommentsListComponent implements OnInit {
     this.showPublish = !!this.commentText.length;
   }
 
+  /**
+   * create comment and delegate it to parent cmp.
+   */
   private onPublishButtonClick() {
     let comment: Comment = {
       comment: this.commentText,
